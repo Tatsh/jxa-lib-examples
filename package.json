@@ -117,5 +117,5 @@
     "format": "prettier -w . && yarn markdownlint-cli2 --fix '**/*.md' '#node_modules'",
     "qa": "yarn eslint && yarn check-spelling && yarn check-formatting"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

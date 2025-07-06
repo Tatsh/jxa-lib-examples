@@ -1,0 +1,16 @@
+*.kate-swp
+*.log
+*~
+.*.swp
+.*_cache/
+.coverage
+.cspellcache
+.directory
+.pnp.*
+/.yarn/install-state.gz
+/build/
+/docs/_build/
+/man/_static/
+__pycache__/
+htmlcov/
+node_modules/

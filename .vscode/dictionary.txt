@@ -2,6 +2,7 @@ applescript
 bsky
 codeowners
 coveragerc
+coverallsapp
 docstrings
 esbenp
 facetime

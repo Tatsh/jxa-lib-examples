@@ -1,6 +1,6 @@
-import { describe, expect, jest, beforeEach, it } from '@jest/globals';
-import refreshTags from './refresh-tags';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { ItunesHelper } from 'jxa-lib';
+import refreshTags from './refresh-tags';
 
 jest.mock('jxa-lib', () => {
   return {

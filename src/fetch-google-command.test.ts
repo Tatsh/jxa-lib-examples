@@ -1,4 +1,4 @@
-import { describe, expect, jest, beforeEach, it } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { dispatch, fetch, string, unistd } from 'jxa-lib';
 
 const fetchMock = fetch as jest.MockedFunction<typeof fetch>;

@@ -1,6 +1,6 @@
-import { describe, expect, jest, beforeEach, it } from '@jest/globals';
-import resetFaceTimeBlockList from './reset-facetime-block-list';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import mockPath from 'ramda/es/path';
+import resetFaceTimeBlockList from './reset-facetime-block-list';
 
 jest.mock('ramda/es/path', () => jest.fn());
 

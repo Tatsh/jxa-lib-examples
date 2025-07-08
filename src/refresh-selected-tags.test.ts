@@ -1,4 +1,4 @@
-import { describe, expect, jest, beforeEach, it } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { applicationWithStandardAdditions } from 'jxa-lib';
 import refreshSelectedTags from './refresh-selected-tags';
 

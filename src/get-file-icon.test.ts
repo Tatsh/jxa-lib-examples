@@ -1,4 +1,4 @@
-import { expect, jest, beforeEach, test } from '@jest/globals';
+import { beforeEach, expect, jest, test } from '@jest/globals';
 import getIconOfChromeAppsDirectory from './get-file-icon';
 
 jest.mock('jxa-lib', () => ({

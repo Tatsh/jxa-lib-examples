@@ -1,4 +1,11 @@
-import { describe, expect, jest, beforeEach, it } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import * as jxaLib from 'jxa-lib';
+import fetchGoogle from './fetch-google-command';
+import getIconOfChromeAppsDirectory from './get-file-icon';
+import { main } from './main';
+import refreshSelectedTags from './refresh-selected-tags';
+import refreshTags from './refresh-tags';
+import resetFaceTimeBlockList from './reset-facetime-block-list';
 
 global.ObjC = {
   bindFunction: jest.fn(),
@@ -42,13 +49,6 @@ global.$ = {
     },
   },
 } as unknown as typeof global.$;
-import * as jxaLib from 'jxa-lib';
-import { main } from './main';
-import fetchGoogle from './fetch-google-command';
-import getIconOfChromeAppsDirectory from './get-file-icon';
-import refreshSelectedTags from './refresh-selected-tags';
-import refreshTags from './refresh-tags';
-import resetFaceTimeBlockList from './reset-facetime-block-list';
 
 jest.mock('jxa-lib');
 jest.mock('./fetch-google-command');

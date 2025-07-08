@@ -1,4 +1,4 @@
-import { dispatch, fetch, stdlib, string, unistd } from 'jxa-lib';
+import { dispatch, fetch, string, unistd } from 'jxa-lib';
 
 /**
  * Demonstrates how to use the Dispatch framework to fetch webpage contents. `fetch()` here is
@@ -14,7 +14,7 @@ export default function fetchGoogle() {
       }
       sema.signal();
     })
-    .catch(() => {
+    .catch((_) => {
       console.log('Caught error');
       sema.signal();
     });
@@ -23,8 +23,4 @@ export default function fetchGoogle() {
     unistd.sleep(1);
   }
   return 0;
-}
-
-if ((stdlib.getenv('_') as string).endsWith('fetch-google-command.ts')) {
-  stdlib.exit(fetchGoogle());
 }

@@ -2,65 +2,7 @@
 
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ([
-/* 0 */
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.main = void 0;
-const jxa_lib_1 = __webpack_require__(1);
-const fetch_google_command_1 = __importDefault(__webpack_require__(396));
-const get_file_icon_1 = __importDefault(__webpack_require__(397));
-const refresh_selected_tags_1 = __importDefault(__webpack_require__(398));
-const refresh_tags_1 = __importDefault(__webpack_require__(399));
-const reset_facetime_block_list_1 = __importDefault(__webpack_require__(400));
-const main = () => {
-    const finder = (0, jxa_lib_1.applicationWithStandardAdditions)('Finder');
-    const item = finder.chooseFromList([
-        'Clear Badge of FaceTime.app',
-        'Fetch google.com with NSURLSession (fetch-like API)',
-        'Get icon of Chrome Apps.localized',
-        'Refresh selected tags in Music.app',
-        'Refresh all tags in Music.app',
-        'Reset the FaceTime block list',
-    ], {
-        withTitle: 'jxa-lib examples',
-        withPrompt: 'Please open the associated app with the task you choose before ' +
-            'clicking OK.\n\n' +
-            `If you choose "Reset the FaceTime block list", have FaceTime.app's ` +
-            'Preferences window already open.\n\n' +
-            'Getting the icon of Chrome Apps directory may fail if Chrome has ' +
-            'not yet made this directory.\n',
-        multipleSelectionsAllowed: false,
-        emptySelectionAllowed: false,
-    });
-    if (!item || !item.length) {
-        return 0;
-    }
-    switch (item[0]) {
-        case 'Fetch google.com with NSURLSession (fetch-like API)':
-            return (0, fetch_google_command_1.default)();
-        case 'Refresh selected tags in Music.app':
-            return (0, refresh_selected_tags_1.default)();
-        case 'Refresh all tags in Music.app':
-            return (0, refresh_tags_1.default)();
-        case 'Reset the FaceTime block list':
-            return (0, reset_facetime_block_list_1.default)();
-        case 'Get icon of Chrome Apps.localized':
-            return (0, get_file_icon_1.default)();
-        default:
-            return 1;
-    }
-};
-exports.main = main;
-jxa_lib_1.stdlib.exit((0, exports.main)());
-
-
-/***/ }),
+/* 0 */,
 /* 1 */
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -14578,6 +14520,64 @@ Workspace.shared = new Workspace();
 
 /***/ }),
 /* 396 */
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.main = void 0;
+const jxa_lib_1 = __webpack_require__(1);
+const fetch_google_command_1 = __importDefault(__webpack_require__(397));
+const get_file_icon_1 = __importDefault(__webpack_require__(398));
+const refresh_selected_tags_1 = __importDefault(__webpack_require__(399));
+const refresh_tags_1 = __importDefault(__webpack_require__(400));
+const reset_facetime_block_list_1 = __importDefault(__webpack_require__(401));
+const main = () => {
+    const finder = (0, jxa_lib_1.applicationWithStandardAdditions)('Finder');
+    const item = finder.chooseFromList([
+        'Clear Badge of FaceTime.app',
+        'Fetch google.com with NSURLSession (fetch-like API)',
+        'Get icon of Chrome Apps.localized',
+        'Refresh selected tags in Music.app',
+        'Refresh all tags in Music.app',
+        'Reset the FaceTime block list',
+    ], {
+        withTitle: 'jxa-lib examples',
+        withPrompt: 'Please open the associated app with the task you choose before ' +
+            'clicking OK.\n\n' +
+            `If you choose "Reset the FaceTime block list", have FaceTime.app's ` +
+            'Preferences window already open.\n\n' +
+            'Getting the icon of Chrome Apps directory may fail if Chrome has ' +
+            'not yet made this directory.\n',
+        multipleSelectionsAllowed: false,
+        emptySelectionAllowed: false,
+    });
+    if (!item || !item.length) {
+        return 0;
+    }
+    switch (item[0]) {
+        case 'Fetch google.com with NSURLSession (fetch-like API)':
+            return (0, fetch_google_command_1.default)();
+        case 'Refresh selected tags in Music.app':
+            return (0, refresh_selected_tags_1.default)();
+        case 'Refresh all tags in Music.app':
+            return (0, refresh_tags_1.default)();
+        case 'Reset the FaceTime block list':
+            return (0, reset_facetime_block_list_1.default)();
+        case 'Get icon of Chrome Apps.localized':
+            return (0, get_file_icon_1.default)();
+        default:
+            return 1;
+    }
+};
+exports.main = main;
+
+
+/***/ }),
+/* 397 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -14598,7 +14598,7 @@ function fetchGoogle() {
         }
         sema.signal();
     })
-        .catch(() => {
+        .catch((_) => {
         console.log('Caught error');
         sema.signal();
     });
@@ -14607,13 +14607,10 @@ function fetchGoogle() {
     }
     return 0;
 }
-if (jxa_lib_1.stdlib.getenv('_').endsWith('fetch-google-command.ts')) {
-    jxa_lib_1.stdlib.exit(fetchGoogle());
-}
 
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -14636,7 +14633,7 @@ function getIconOfChromeAppsDirectory() {
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -14695,13 +14692,10 @@ function refreshSelectedTags() {
     });
     return 0;
 }
-if (jxa_lib_1.stdlib.getenv('_').endsWith('refresh-selected-tags.ts')) {
-    refreshSelectedTags();
-}
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -14719,13 +14713,10 @@ function refreshTags() {
     }
     return 0;
 }
-if (jxa_lib_1.stdlib.getenv('_').endsWith('refresh-tags.ts')) {
-    refreshTags();
-}
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -14735,8 +14726,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports["default"] = resetFaceTimeBlockList;
-const jxa_lib_1 = __webpack_require__(1);
-const path_1 = __importDefault(__webpack_require__(401));
+const path_1 = __importDefault(__webpack_require__(402));
 // The Preferences window in FaceTime must be already open for this to work
 function resetFaceTimeBlockList() {
     const se = Application('System Events');
@@ -14761,13 +14751,10 @@ function resetFaceTimeBlockList() {
     }
     return 0;
 }
-if (jxa_lib_1.stdlib.getenv('_').endsWith('reset-facetime-block-list.ts')) {
-    jxa_lib_1.stdlib.exit(resetFaceTimeBlockList());
-}
 
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14775,8 +14762,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _internal_curry2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(402);
-/* harmony import */ var _internal_path_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(405);
+/* harmony import */ var _internal_curry2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(403);
+/* harmony import */ var _internal_path_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(406);
 
 
 
@@ -14809,7 +14796,7 @@ var path = /*#__PURE__*/(0,_internal_curry2_js__WEBPACK_IMPORTED_MODULE_0__["def
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (path);
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14817,8 +14804,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _curry2)
 /* harmony export */ });
-/* harmony import */ var _curry1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(403);
-/* harmony import */ var _isPlaceholder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(404);
+/* harmony import */ var _curry1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(404);
+/* harmony import */ var _isPlaceholder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(405);
 
 
 
@@ -14850,7 +14837,7 @@ function _curry2(fn) {
 }
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14858,7 +14845,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _curry1)
 /* harmony export */ });
-/* harmony import */ var _isPlaceholder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(404);
+/* harmony import */ var _isPlaceholder_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(405);
 
 
 /**
@@ -14880,7 +14867,7 @@ function _curry1(fn) {
 }
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14893,7 +14880,7 @@ function _isPlaceholder(a) {
 }
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14901,8 +14888,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _path)
 /* harmony export */ });
-/* harmony import */ var _isInteger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(406);
-/* harmony import */ var _nth_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(407);
+/* harmony import */ var _isInteger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(407);
+/* harmony import */ var _nth_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(408);
 
 
 function _path(pathAr, obj) {
@@ -14922,7 +14909,7 @@ function _path(pathAr, obj) {
 }
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14943,7 +14930,7 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -15013,11 +15000,18 @@ function _nth(offset, list) {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(0);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(() => {
+"use strict";
+var exports = __webpack_exports__;
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const jxa_lib_1 = __webpack_require__(1);
+const main_1 = __webpack_require__(396);
+jxa_lib_1.stdlib.exit((0, main_1.main)());
+
+})();
+
 /******/ })()
 ;

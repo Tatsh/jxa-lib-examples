@@ -1,4 +1,4 @@
-import { applicationWithStandardAdditions, stdlib } from 'jxa-lib';
+import { applicationWithStandardAdditions } from 'jxa-lib';
 
 /**
 Original source:
@@ -52,8 +52,4 @@ export default function refreshSelectedTags() {
   });
 
   return 0;
-}
-
-if ((stdlib.getenv('_') as string).endsWith('refresh-selected-tags.ts')) {
-  refreshSelectedTags();
 }

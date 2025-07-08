@@ -1,4 +1,4 @@
-import { stdlib, ItunesHelper } from 'jxa-lib';
+import { ItunesHelper } from 'jxa-lib';
 
 export default function refreshTags() {
   const tunesApp = Application('Music') as ItunesApplication;
@@ -9,8 +9,4 @@ export default function refreshTags() {
     tunesApp.refresh(track);
   }
   return 0;
-}
-
-if ((stdlib.getenv('_') as string).endsWith('refresh-tags.ts')) {
-  refreshTags();
 }

@@ -13,4 +13,4 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/jxa-lib-examples/compare/v0.0.2...HEAD
+[unreleased]: https://github.com/Tatsh/jxa-lib-examples/compare/v0.0.3...HEAD

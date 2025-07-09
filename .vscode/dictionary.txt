@@ -14,7 +14,6 @@ libjsonnet
 nspng
 nsurl
 osascript
-pipx
 pycache
 ramda
 schemafile
@@ -24,3 +23,4 @@ udvare
 unistd
 utilitsing
 vars
+wiswa

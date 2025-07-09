@@ -4,6 +4,7 @@ local utils = import 'utils.libjsonnet';
   local top = self,
   // General settings
   project_type: 'typescript',
+  keep_dist: true,
 
   // Shared
   github_username: 'Tatsh',
@@ -17,7 +18,7 @@ local utils = import 'utils.libjsonnet';
     },
   ],
   project_name: 'jxa-lib-examples',
-  version: '0.0.0',
+  version: '0.0.2',
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
@@ -39,19 +40,23 @@ local utils = import 'utils.libjsonnet';
 
   // TypeScript only
   package_json+: {
-    dependencies+: { 'jxa-lib': '^0.1.0', ramda: '^0.31.3' },
+    bin: './dist/index.js',
+    dependencies+: { 'jxa-lib': '^0.1.7', ramda: '^0.31.3' },
     devDependencies+: {
+      '@types/node': '^24.0.10',
       '@types/ramda': '^0.30.2',
-      'jxa-types': '^0.0.1',
+      'jxa-types': '^0.0.6',
       'ts-loader': '^9.5.2',
+      'webpack-cli': '^6.0.1',
+      'webpack-shebang-plugin': '^1.1.8',
       webpack: '^5.99.9',
     },
+    files+: ['dist/index.js', 'dist/index.js.map'],
     main: 'dist/index.js',
   },
   eslint+: [{ rules: { '@typescript-eslint/no-unused-expressions': 'off' } }],
   tsconfig+: {
     compilerOptions+: {
-      declaration: true,
       emitDecoratorMetadata: true,
       lib: ['es2018'],
       newLine: 'LF',
@@ -65,6 +70,7 @@ local utils = import 'utils.libjsonnet';
       strictNullChecks: true,
       strictPropertyInitialization: true,
       target: 'es2018',
+      types: ['jxa-types', 'node'],
     },
     include: ['src'],
   },

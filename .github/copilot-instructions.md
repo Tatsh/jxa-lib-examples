@@ -1,6 +1,6 @@
 # Copilot Instructions
 
-jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilitsing the
+jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilising the
 jxa-lib library.
 
 ## General

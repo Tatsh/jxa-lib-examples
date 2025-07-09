@@ -21,6 +21,5 @@ sema
 tatsh
 udvare
 unistd
-utilitsing
 vars
 wiswa

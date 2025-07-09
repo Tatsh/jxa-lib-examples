@@ -23,7 +23,7 @@ local utils = import 'utils.libjsonnet';
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
   copilot: {
-    intro: 'jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilitsing the jxa-lib library.',
+    intro: 'jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilising the jxa-lib library.',
   },
   social+: {
     mastodon+: { id: '109370961877277568' },

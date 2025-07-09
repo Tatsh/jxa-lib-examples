@@ -17,8 +17,10 @@ local utils = import 'utils.libjsonnet';
       name: '%s %s' % [self['given-names'], self['family-names']],
     },
   ],
+  github_project_name: 'jxa-lib-examples',
+  repository_name: self.github_project_name,
   project_name: '@tatsh/jxa-lib-examples',
-  version: '0.0.3',
+  version: '0.0.4',
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
@@ -54,6 +56,9 @@ local utils = import 'utils.libjsonnet';
     },
     files+: ['dist/index.js', 'dist/index.js.map'],
     main: 'dist/index.js',
+    publishConfig: {
+      registry: 'https://npm.pkg.github.com',
+    },
   },
   eslint+: [{ rules: { '@typescript-eslint/no-unused-expressions': 'off' } }],
   tsconfig+: {

@@ -17,7 +17,7 @@ local utils = import 'utils.libjsonnet';
       name: '%s %s' % [self['given-names'], self['family-names']],
     },
   ],
-  project_name: 'jxa-lib-examples',
+  project_name: '@tatsh/jxa-lib-examples',
   version: '0.0.3',
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],

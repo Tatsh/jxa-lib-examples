@@ -81,7 +81,7 @@
       }
     }
   },
-  "name": "jxa-lib-examples",
+  "name": "@tatsh/jxa-lib-examples",
   "packageManager": "yarn@4.9.2",
   "prettier": {
     "endOfLine": "lf",
@@ -104,6 +104,9 @@
     "printWidth": 100,
     "reorderKeys": true,
     "singleQuote": true
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",

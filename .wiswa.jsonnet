@@ -5,6 +5,7 @@ local utils = import 'utils.libjsonnet';
   // General settings
   project_type: 'typescript',
   keep_dist: true,
+  want_man: true,
 
   // Shared
   github_username: 'Tatsh',
@@ -20,7 +21,7 @@ local utils = import 'utils.libjsonnet';
   github_project_name: 'jxa-lib-examples',
   repository_name: self.github_project_name,
   project_name: '@tatsh/jxa-lib-examples',
-  version: '0.0.4',
+  version: '0.0.5',
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,

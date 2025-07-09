@@ -63,7 +63,13 @@
     "webpack-shebang-plugin": "^1.1.8",
     "yarn-audit-fix": "^10.1.1"
   },
-  "files": ["LICENSE.txt", "README.md", "dist/index.js", "dist/index.js.map"],
+  "files": [
+    "LICENSE.txt",
+    "README.md",
+    "dist/index.js",
+    "dist/index.js.map",
+    "man/jxa-lib-examples.1"
+  ],
   "homepage": "https://tatsh.github.io/jxa-lib-examples/",
   "keywords": ["applescript", "jxa", "macos", "typescript"],
   "license": "MIT",
@@ -119,5 +125,5 @@
     "qa": "yarn eslint && yarn check-spelling && yarn check-formatting",
     "test": "jest"
   },
-  "version": "0.0.4"
+  "version": "0.0.5"
 }

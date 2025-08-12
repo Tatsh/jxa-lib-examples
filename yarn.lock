@@ -1055,10 +1055,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:^9.31.0":
-  version: 9.31.0
-  resolution: "@eslint/js@npm:9.31.0"
-  checksum: 10c0/f9d4c73d0fafe70679a418cbb25ab7ebcc8f1dba6c32456d6f8ba5a137d583ecff233cfe10f61f41d7d4d2220e94cff1f39fc7ed1fa3819d1888dee1cad678ea
+"@eslint/js@npm:^9.33.0":
+  version: 9.33.0
+  resolution: "@eslint/js@npm:9.33.0"
+  checksum: 10c0/4c42c9abde76a183b8e47205fd6c3116b058f82f07b6ad4de40de56cdb30a36e9ecd40efbea1b63a84d08c206aadbb0aa39a890197e1ad6455a8e542df98f186
   languageName: node
   linkType: hard
 
@@ -1650,7 +1650,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tatsh/jxa-lib-examples@workspace:."
   dependencies:
-    "@eslint/js": "npm:^9.31.0"
+    "@eslint/js": "npm:^9.33.0"
     "@prettier/plugin-xml": "npm:^3.4.2"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.2.0"

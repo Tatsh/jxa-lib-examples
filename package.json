@@ -54,7 +54,7 @@
     "prettier-plugin-toml": "^2.0.6",
     "ramda": "^0.31.3",
     "ts-jest": "^29.4.1",
-    "ts-loader": "^9.5.2",
+    "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.40.0",

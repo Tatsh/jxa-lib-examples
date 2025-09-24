@@ -1,23 +1,10 @@
 local utils = import 'utils.libjsonnet';
 
-(import 'defaults.libjsonnet') + {
-  local top = self,
-  // General settings
+{
   project_type: 'typescript',
   keep_dist: true,
   want_man: true,
-
   // Shared
-  github_username: 'Tatsh',
-  security_policy_supported_versions: { '0.0.x': ':white_check_mark:' },
-  authors: [
-    {
-      'family-names': 'Udvare',
-      'given-names': 'Andrew',
-      email: 'audvare@gmail.com',
-      name: '%s %s' % [self['given-names'], self['family-names']],
-    },
-  ],
   github_project_name: 'jxa-lib-examples',
   repository_name: self.github_project_name,
   project_name: '@tatsh/jxa-lib-examples',
@@ -25,35 +12,21 @@ local utils = import 'utils.libjsonnet';
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
-  copilot: {
+  copilot+: {
     intro: 'jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilising the jxa-lib library.',
   },
-  social+: {
-    mastodon+: { id: '109370961877277568' },
-  },
-
-  // GitHub
-  github+: {
-    funding+: {
-      ko_fi: 'tatsh2',
-      liberapay: 'tatsh2',
-      patreon: 'tatsh2',
-    },
-  },
-
   // TypeScript only
   package_json+: {
     bin: './dist/index.js',
     devDependencies+: {
-      '@types/node': '^24.0.10',
-      '@types/ramda': '^0.30.2',
-      'jxa-lib': '^0.1.7',
-      'jxa-types': '^0.0.6',
-      'ts-loader': '^9.5.2',
-      'webpack-cli': '^6.0.1',
-      'webpack-shebang-plugin': '^1.1.8',
-      ramda: '^0.31.3',
-      webpack: '^5.99.9',
+      '@types/ramda': utils.latestNpmPackageVersionCaret('@types/ramda'),
+      'jxa-lib': utils.latestNpmPackageVersionCaret('jxa-lib'),
+      'jxa-types': utils.latestNpmPackageVersionCaret('jxa-types'),
+      'ts-loader': utils.latestNpmPackageVersionCaret('ts-loader'),
+      'webpack-cli': utils.latestNpmPackageVersionCaret('webpack-cli'),
+      'webpack-shebang-plugin': utils.latestNpmPackageVersionCaret('webpack-shebang-plugin'),
+      ramda: utils.latestNpmPackageVersionCaret('ramda'),
+      webpack: utils.latestNpmPackageVersionCaret('webpack'),
     },
     files+: ['dist/index.js', 'dist/index.js.map'],
     main: 'dist/index.js',

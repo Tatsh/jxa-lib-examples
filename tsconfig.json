@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "lib": ["es2018"],
     "module": "commonjs",
+    "moduleResolution": "node",
     "newLine": "LF",
     "noEmitOnError": true,
     "noErrorTruncation": true,

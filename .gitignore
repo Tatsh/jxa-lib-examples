@@ -3,6 +3,7 @@
 *~
 .*.swp
 .*_cache/
+.DS_Store*
 .coverage
 .cspellcache
 .directory

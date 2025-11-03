@@ -6,6 +6,7 @@ coverallsapp
 docstrings
 esbenp
 facetime
+foxundermoon
 getenv
 htmlcov
 jsonnet
@@ -18,6 +19,7 @@ pycache
 ramda
 schemafile
 sema
+shellformat
 tatsh
 udvare
 unistd

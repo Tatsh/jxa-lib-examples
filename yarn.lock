@@ -1729,7 +1729,7 @@ __metadata:
     cspell: "npm:^9.2.1"
     eslint: "npm:^9.39.0"
     jest: "npm:^30.2.0"
-    jxa-lib: "npm:^0.1.7"
+    jxa-lib: "npm:^0.1.8"
     jxa-types: "npm:^0.0.6"
     markdownlint-cli2: "npm:^0.18.1"
     prettier: "npm:^3.6.2"
@@ -5131,12 +5131,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jxa-lib@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "jxa-lib@npm:0.1.7"
+"jxa-lib@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "jxa-lib@npm:0.1.8"
   dependencies:
-    ramda: "npm:^0.31.3"
-  checksum: 10c0/81064820d4fd97e05e513604a5841b61213254088977430e13dee6e2d483e6f2ccbe49ad55d6cc99688de4b9e4f94895eca981bb7a649d9b60c15ba56f0b7f88
+    ramda: "npm:^0.32.0"
+  checksum: 10c0/1f3f0eb586c0ba3bb7b0e52034baaf42bfb13c6a9b2dde8a96d65cfd9f875a7ad12483eaeecccbc668c49150067cb6bf16396c0ffa5e4043442d6e6cba9a9eb0
   languageName: node
   linkType: hard
 
@@ -6292,13 +6292,6 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
-  languageName: node
-  linkType: hard
-
-"ramda@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "ramda@npm:0.31.3"
-  checksum: 10c0/a4328521e990df2a8fed7b73b2ca1d6bd611e3af0e512dd23142b5f4e5124778d75573cad7742479007dacb8b0204c386b21a0542e0a35aee5097bb27f48bff1
   languageName: node
   linkType: hard
 

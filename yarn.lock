@@ -1729,7 +1729,7 @@ __metadata:
     cspell: "npm:^9.3.0"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    jxa-lib: "npm:^0.1.8"
+    jxa-lib: "npm:^0.1.9"
     jxa-types: "npm:^0.0.6"
     markdownlint-cli2: "npm:^0.18.1"
     prettier: "npm:^3.6.2"
@@ -5131,12 +5131,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jxa-lib@npm:^0.1.8":
-  version: 0.1.8
-  resolution: "jxa-lib@npm:0.1.8"
+"jxa-lib@npm:^0.1.9":
+  version: 0.1.9
+  resolution: "jxa-lib@npm:0.1.9"
   dependencies:
     ramda: "npm:^0.32.0"
-  checksum: 10c0/1f3f0eb586c0ba3bb7b0e52034baaf42bfb13c6a9b2dde8a96d65cfd9f875a7ad12483eaeecccbc668c49150067cb6bf16396c0ffa5e4043442d6e6cba9a9eb0
+  checksum: 10c0/af498a2a6e9c32f007c83acdd9747691f7fb083613eae17f19c8bb471bab1849de7617fc1a515a608f04e435bcc8692a02db5545cf013dc0e91be5edec18de53
   languageName: node
   linkType: hard
 

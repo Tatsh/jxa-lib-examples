@@ -8,14 +8,13 @@ esbenp
 facetime
 foxundermoon
 getenv
-htmlcov
 jsonnet
 jsonschema
+libera
 libjsonnet
 nspng
 nsurl
 osascript
-pycache
 ramda
 schemafile
 sema

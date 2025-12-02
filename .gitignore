@@ -11,8 +11,4 @@
 /.yarn/install-state.gz
 /build/
 /coverage/
-/docs/_build/
-/man/_static/
-__pycache__/
-htmlcov/
 node_modules/

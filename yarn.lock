@@ -1763,6 +1763,7 @@ __metadata:
     "@types/ramda": "npm:^0.31.1"
     cspell: "npm:^9.6.4"
     eslint: "npm:^10.0.0"
+    globals: "npm:^17.3.0"
     jest: "npm:^30.2.0"
     jxa-lib: "npm:^0.1.9"
     jxa-types: "npm:^0.0.8"
@@ -4088,6 +4089,13 @@ __metadata:
   dependencies:
     ini: "npm:4.1.1"
   checksum: 10c0/f9cbeef41db4876f94dd0bac1c1b4282a7de9c16350ecaaf83e7b2dd777b32704cc25beeb1170b5a63c42a2c9abfade74d46357fe0133e933218bc89e613d4b2
+  languageName: node
+  linkType: hard
+
+"globals@npm:^17.3.0":
+  version: 17.3.0
+  resolution: "globals@npm:17.3.0"
+  checksum: 10c0/7f21443ecaa60c6e9ff56d9fb6f10a9b5f9514e7f22e5392f715472bb220ce31c865ebf414a32695150e733fb3e1013e6322dbce70fddd1e066f372b8d55a4b8
   languageName: node
   linkType: hard
 

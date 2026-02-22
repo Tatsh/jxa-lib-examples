@@ -1,8 +1,8 @@
 # jxa-lib-examples
 
-[![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/@tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/tags)
-[![License](https://img.shields.io/github/license/Tatsh/@tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/blob/master/LICENSE.txt)
-[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/@tatsh/jxa-lib-examples/v0.0.5/master)](https://github.com/Tatsh/jxa-lib-examples/compare/v0.0.5...master)
+[![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/tags)
+[![License](https://img.shields.io/github/license/Tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/blob/master/LICENSE.txt)
+[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/jxa-lib-examples/v0.0.5/master)](https://github.com/Tatsh/jxa-lib-examples/compare/v0.0.5...master)
 [![CodeQL](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/codeql.yml/badge.svg)](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/codeql.yml)
 [![QA](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/qa.yml/badge.svg)](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/qa.yml)
 [![Tests](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/tests.yml/badge.svg)](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/tests.yml)
@@ -10,7 +10,7 @@
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-blue?logo=dependabot)](https://github.com/dependabot)
 [![GitHub Pages](https://github.com/Tatsh/jxa-lib-examples/actions/workflows/pages/pages-build-deployment/badge.svg)](https://tatsh.github.io/jxa-lib-examples/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Stargazers](https://img.shields.io/github/stars/Tatsh/@tatsh/jxa-lib-examples?logo=github&style=flat)](https://github.com/Tatsh/@tatsh/jxa-lib-examples/stargazers)
+[![Stargazers](https://img.shields.io/github/stars/Tatsh/jxa-lib-examples?logo=github&style=flat)](https://github.com/Tatsh/jxa-lib-examples/stargazers)
 [![Prettier](https://img.shields.io/badge/Prettier-enabled-black?logo=prettier)](https://prettier.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-black?logo=typescript)](https://www.typescriptlang.org/)
 [![Yarn](https://img.shields.io/badge/Yarn-4c335c?logo=yarn)](https://yarnpkg.com/)

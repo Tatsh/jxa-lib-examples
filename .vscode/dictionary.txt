@@ -1,6 +1,5 @@
 applescript
 bsky
-codeowners
 coveragerc
 coverallsapp
 docstrings

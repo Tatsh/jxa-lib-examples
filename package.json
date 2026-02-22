@@ -40,10 +40,10 @@
     "@eslint/js": "^10.0.1",
     "@prettier/plugin-xml": "^3.4.2",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.2.2",
+    "@types/node": "^25.3.0",
     "@types/ramda": "^0.31.1",
     "cspell": "^9.6.4",
-    "eslint": "^10.0.0",
+    "eslint": "^10.0.1",
     "globals": "^17.3.0",
     "jest": "^30.2.0",
     "jxa-lib": "^0.1.9",
@@ -89,7 +89,11 @@
         "line_length": 100,
         "tables": false
       }
-    }
+    },
+    "gitignore": true,
+    "globs": ["**/*.md", "**/*.mdc"],
+    "noBanner": true,
+    "showFound": true
   },
   "name": "@tatsh/jxa-lib-examples",
   "packageManager": "yarn@4.12.0",
@@ -123,9 +127,9 @@
     "url": "git@github.com:Tatsh/jxa-lib-examples.git"
   },
   "scripts": {
-    "check-formatting": "yarn prettier -c . && yarn markdownlint-cli2 '**/*.md' '#node_modules'",
+    "check-formatting": "yarn prettier -c . && yarn markdownlint-cli2",
     "check-spelling": "yarn cspell --no-progress './**/*'  './**/.*'",
-    "format": "prettier -w . && yarn markdownlint-cli2 --fix '**/*.md' '#node_modules'",
+    "format": "prettier -w . && yarn markdownlint-cli2 --fix",
     "qa": "yarn eslint && yarn check-spelling && yarn check-formatting",
     "test": "jest"
   },

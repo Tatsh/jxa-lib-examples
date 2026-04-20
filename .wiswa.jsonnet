@@ -1,6 +1,7 @@
 local utils = import 'utils.libjsonnet';
 
 {
+  uses_user_defaults: true,
   project_type: 'typescript',
   keep_dist: true,
   want_man: true,
@@ -12,9 +13,6 @@ local utils = import 'utils.libjsonnet';
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
-  copilot+: {
-    intro: 'jxa-lib-examples is a series of example scripts for JXA (JavaScript for Automation) utilising the jxa-lib library.',
-  },
   // TypeScript only
   package_json+: {
     bin: './dist/index.js',

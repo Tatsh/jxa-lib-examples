@@ -11,7 +11,7 @@
     "isolatedModules": true,
     "lib": ["es2018"],
     "module": "commonjs",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "newLine": "LF",
     "noEmitOnError": true,
     "noErrorTruncation": true,

@@ -38,6 +38,9 @@ local utils = import 'utils.libjsonnet';
   eslint+: [{ rules: { '@typescript-eslint/no-unused-expressions': 'off' } }],
   tsconfig+: {
     compilerOptions+: {
+      // Pin to commonjs/node until ts-jest and typescript-eslint support TypeScript 6
+      module: 'commonjs',
+      moduleResolution: 'node',
       emitDecoratorMetadata: true,
       lib: ['es2018'],
       newLine: 'LF',

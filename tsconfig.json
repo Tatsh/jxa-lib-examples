@@ -2,7 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "alwaysStrict": true,
-    "baseUrl": "src",
     "disableReferencedProjectLoad": true,
     "disableSolutionSearching": true,
     "emitDecoratorMetadata": true,
@@ -12,7 +11,7 @@
     "isolatedModules": true,
     "lib": ["es2018"],
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "newLine": "LF",
     "noEmitOnError": true,
     "noErrorTruncation": true,

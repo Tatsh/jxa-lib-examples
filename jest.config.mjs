@@ -1,4 +1,3 @@
-import type { Config } from 'jest';
 import { createDefaultPreset } from 'ts-jest';
 
 export default {
@@ -9,4 +8,4 @@ export default {
     '^.+\\.js?$': ['ts-jest', {}],
     ...createDefaultPreset().transform,
   },
-} as Config;
+};

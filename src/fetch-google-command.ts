@@ -3,7 +3,6 @@ import { dispatch, fetch, string, unistd } from 'jxa-lib';
 /**
  * Demonstrates how to use the Dispatch framework to fetch webpage contents. `fetch()` here is
  * custom built in jxa-lib to use `NSURLSession`.
- * @return int
  */
 export default function fetchGoogle() {
   const sema = new dispatch.DispatchSemaphore(0);

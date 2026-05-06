@@ -2,8 +2,6 @@
 
 <!-- WISWA-GENERATED-README:START -->
 
-[![NPM Version](https://img.shields.io/npm/v/@tatsh/jxa-lib-examples)](https://www.npmjs.com/package/@tatsh/jxa-lib-examples)
-[![NPM Downloads](https://img.shields.io/npm/dm/@tatsh/jxa-lib-examples)](https://www.npmjs.com/package/@tatsh/jxa-lib-examples)
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/tags)
 [![License](https://img.shields.io/github/license/Tatsh/jxa-lib-examples)](https://github.com/Tatsh/jxa-lib-examples/blob/master/LICENSE.txt)
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/jxa-lib-examples/v0.0.6/master)](https://github.com/Tatsh/jxa-lib-examples/compare/v0.0.6...master)

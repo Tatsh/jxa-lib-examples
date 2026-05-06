@@ -1,8 +1,8 @@
 {
   "_wiswa": {
     "commandLine": "wiswa",
-    "lastRun": "2026-04-27T15:10:34Z",
-    "version": "ef04e05"
+    "lastRun": "2026-05-06T21:30:37Z",
+    "version": "e1a131b-dirty"
   },
   "bin": "./dist/index.js",
   "contributors": ["Andrew Udvare <audvare@gmail.com>"],
@@ -51,7 +51,7 @@
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "jxa-lib": "^0.1.9",
-    "jxa-types": "^0.0.8",
+    "jxa-types": "^0.0.11",
     "markdownlint-cli2": "^0.22.1",
     "prettier": "^3.8.3",
     "prettier-plugin-ini": "^1.3.0",

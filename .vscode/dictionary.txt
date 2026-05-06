@@ -25,6 +25,7 @@ nspng
 nsurl
 oneline
 osascript
+preapproved
 pylock
 ramda
 regen

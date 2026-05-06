@@ -6,6 +6,13 @@ local utils = import 'utils.libjsonnet';
   keep_dist: true,
   want_man: true,
   npm_age_gate_exclude_packages: ['jxa-types'],
+  github+: {
+    workflows+: {
+      publish_npm_any+: {
+        registry_url: 'https://npm.pkg.github.com',
+      },
+    },
+  },
   // Shared
   github_project_name: 'jxa-lib-examples',
   repository_name: self.github_project_name,

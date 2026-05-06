@@ -9,16 +9,7 @@ local utils = import 'utils.libjsonnet';
   github+: {
     workflows+: {
       publish_npm_any+: {
-        registry_url: 'https://npm.pkg.github.com',
-      },
-    },
-  },
-  yarnrc+: {
-    npmPublishProvenance: false,
-    npmRegistries: {
-      'https://npm.pkg.github.com': {
-        npmAlwaysAuth: true,
-        npmAuthToken: '${NODE_AUTH_TOKEN-}',
+        build_command: 'yarn webpack',
       },
     },
   },

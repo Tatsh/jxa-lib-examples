@@ -73,6 +73,7 @@ jobs:
     permissions:
       contents: 'write'
       id-token: 'write'
+      packages: 'write'
     runs-on: 'ubuntu-latest'
     steps:
       - uses: 'actions/checkout@v6.0.2'
@@ -92,7 +93,7 @@ jobs:
       - name: 'Install dependencies'
         run: 'yarn'
       - name: 'Build'
-        run: 'yarn tsc'
+        run: 'yarn webpack'
       - env:
           NODE_AUTH_TOKEN: '${{ secrets.NODE_AUTH_TOKEN || secrets.GITHUB_TOKEN }}'
         name: 'Publish to NPM'
@@ -108,3 +109,4 @@ name: 'Publish'
 permissions:
   contents: 'write'
   id-token: 'write'
+  packages: 'write'

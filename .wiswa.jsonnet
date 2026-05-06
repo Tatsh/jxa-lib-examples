@@ -13,6 +13,15 @@ local utils = import 'utils.libjsonnet';
       },
     },
   },
+  yarnrc+: {
+    npmPublishProvenance: false,
+    npmRegistries: {
+      'https://npm.pkg.github.com': {
+        npmAlwaysAuth: true,
+        npmAuthToken: '${NODE_AUTH_TOKEN-}',
+      },
+    },
+  },
   // Shared
   github_project_name: 'jxa-lib-examples',
   repository_name: self.github_project_name,

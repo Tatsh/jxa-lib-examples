@@ -128,7 +128,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Tatsh/jxa-lib-examples.git"
+    "url": "git+https://github.com/Tatsh/jxa-lib-examples.git"
   },
   "scripts": {
     "check-formatting": "prettier --check . && markdownlint-cli2 --config package.json --configPointer /markdownlint-cli2",

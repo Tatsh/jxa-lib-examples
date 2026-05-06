@@ -40,6 +40,9 @@ local utils = import 'utils.libjsonnet';
     publishConfig: {
       registry: 'https://npm.pkg.github.com',
     },
+    repository+: {
+      url: 'git+https://github.com/Tatsh/jxa-lib-examples.git',
+    },
   },
   cz+: {
     commitizen+: {

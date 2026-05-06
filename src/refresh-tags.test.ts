@@ -1,22 +1,20 @@
-import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import { ItunesHelper } from 'jxa-lib';
 import refreshTags from './refresh-tags';
 
-jest.mock('jxa-lib', () => {
+vi.mock('jxa-lib', () => {
   return {
-    ItunesHelper: jest.fn().mockImplementation((_app) => {
-      return {
-        clearOrphanedTracks: jest.fn(),
-        fileTracks: ['track1', 'track2'],
-      };
+    ItunesHelper: vi.fn(function (this: { clearOrphanedTracks: Mock; fileTracks: string[] }) {
+      this.clearOrphanedTracks = vi.fn();
+      this.fileTracks = ['track1', 'track2'];
     }),
   };
 });
 
-const mockRefresh = jest.fn();
-const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation(() => {});
+const mockRefresh = vi.fn();
+const mockConsoleLog = vi.spyOn(console, 'log').mockImplementation(() => {});
 
-(global as typeof globalThis).Application = jest.fn().mockImplementation((appName: string) => {
+(global as typeof globalThis).Application = vi.fn().mockImplementation((appName: string) => {
   if (appName === 'Music') {
     return {
       refresh: mockRefresh,
@@ -27,15 +25,15 @@ const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation(() => {});
 
 describe('refreshTags', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should clear orphaned tracks and refresh all file tracks', () => {
     const result = refreshTags();
     expect((global as typeof globalThis).Application).toHaveBeenCalledWith('Music');
     expect(ItunesHelper).toHaveBeenCalled();
-    const helperInstance = (ItunesHelper as jest.Mock).mock.results[0].value as {
-      clearOrphanedTracks: jest.Mock;
+    const helperInstance = (ItunesHelper as Mock).mock.instances[0] as {
+      clearOrphanedTracks: Mock;
       fileTracks: string[];
     };
     expect(helperInstance.clearOrphanedTracks).toHaveBeenCalled();
@@ -47,17 +45,13 @@ describe('refreshTags', () => {
   });
 
   it('should handle empty fileTracks gracefully', () => {
-    interface MockItunesHelper {
-      clearOrphanedTracks: jest.Mock;
+    (ItunesHelper as Mock).mockImplementationOnce(function (this: {
+      clearOrphanedTracks: Mock;
       fileTracks: string[];
-    }
-
-    (ItunesHelper as jest.Mock).mockImplementationOnce(
-      (_: string): MockItunesHelper => ({
-        clearOrphanedTracks: jest.fn(),
-        fileTracks: [],
-      }),
-    );
+    }) {
+      this.clearOrphanedTracks = vi.fn();
+      this.fileTracks = [];
+    });
     const result = refreshTags();
     expect(mockRefresh).not.toHaveBeenCalled();
     expect(result).toBe(0);

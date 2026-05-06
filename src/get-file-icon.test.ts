@@ -1,64 +1,64 @@
-import { beforeEach, expect, jest, test } from '@jest/globals';
+import { beforeEach, expect, type Mock, test, vi } from 'vitest';
 import getIconOfChromeAppsDirectory from './get-file-icon';
 
-jest.mock('jxa-lib', () => ({
+vi.mock('jxa-lib', () => ({
   Workspace: {
     shared: {
-      iconForFile: jest.fn(),
+      iconForFile: vi.fn(),
     },
   },
 }));
 
-const mockStringByAppendingPathComponent = jest.fn();
-const mockNSHomeDirectory = jest.fn();
+const mockStringByAppendingPathComponent = vi.fn();
+const mockNSHomeDirectory = vi.fn();
 const mockTIFFRepresentation = {};
 const mockImage = {
   TIFFRepresentation: mockTIFFRepresentation,
 };
 const mockBitmapImageRep = {
-  representationUsingTypeProperties: jest.fn(),
+  representationUsingTypeProperties: vi.fn(),
 };
 const mockPNGData = {
-  writeToFileAtomically: jest.fn(),
+  writeToFileAtomically: vi.fn(),
 };
 
 global.$ = {
   NSHomeDirectory: mockNSHomeDirectory as unknown as () => NSString,
   NSPNGFileType: 4,
   NSBitmapImageRep: {
-    imageRepWithData: jest.fn(),
-    imageRepWithContentsOfFile: jest.fn(),
+    imageRepWithData: vi.fn(),
+    imageRepWithContentsOfFile: vi.fn(),
   },
 } as unknown as typeof global.$;
 global.ObjC = {
-  bindFunction: jest.fn(),
-  ['import']: jest.fn(),
-  wrap: jest.fn() as unknown as {
+  bindFunction: vi.fn(),
+  ['import']: vi.fn(),
+  wrap: vi.fn() as unknown as {
     (x?: null | undefined): null;
     (input: string): NSString;
     (n: number): BridgedObject<number>;
     (xs: string[]): NSString[];
     <I = unknown, R = unknown>(x: I): R;
   },
-  unwrap: jest.fn() as unknown as {
+  unwrap: vi.fn() as unknown as {
     (x: BridgedObject<number>): number;
     (x: BridgedObject<boolean>): boolean;
     <U>(value: U): U extends NSString ? string : U extends NSArray<infer V> ? V[] : unknown;
   },
-  deepUnwrap: jest.fn() as unknown as {
+  deepUnwrap: vi.fn() as unknown as {
     (x: NSArray<NSString>): string[];
     <T, U>(x: T): U;
   },
-  registerSubclass: jest.fn(),
-  castRefToObject: jest.fn(),
-  castObjectToRef: jest.fn(),
-  dict: jest.fn(),
-  block: jest.fn(),
+  registerSubclass: vi.fn(),
+  castRefToObject: vi.fn(),
+  castObjectToRef: vi.fn(),
+  dict: vi.fn(),
+  block: vi.fn(),
   super: () => {},
 };
 
 beforeEach(async () => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 
   // Mock path building
   mockStringByAppendingPathComponent.mockImplementation(function (this: unknown, part: string) {
@@ -73,10 +73,10 @@ beforeEach(async () => {
 
   // Mock iconForFile
   const jxa = await import('jxa-lib');
-  (jxa.Workspace.shared.iconForFile as jest.Mock).mockReturnValue(mockImage);
+  (jxa.Workspace.shared.iconForFile as Mock).mockReturnValue(mockImage);
 
   // Mock imageRepWithData
-  (global.$.NSBitmapImageRep.imageRepWithData as jest.Mock).mockReturnValue(mockBitmapImageRep);
+  (global.$.NSBitmapImageRep.imageRepWithData as Mock).mockReturnValue(mockBitmapImageRep);
 
   // Mock representationUsingTypeProperties
   mockBitmapImageRep.representationUsingTypeProperties.mockReturnValue(mockPNGData);
@@ -108,7 +108,7 @@ test('calls imageRepWithData with TIFFRepresentation', () => {
 });
 
 test('calls representationUsingTypeProperties with NSPNGFileType', () => {
-  (global.ObjC.wrap as jest.Mock).mockReturnValue({});
+  (global.ObjC.wrap as Mock).mockReturnValue({});
   getIconOfChromeAppsDirectory();
   expect(mockBitmapImageRep.representationUsingTypeProperties).toHaveBeenCalledWith(
     global.$.NSPNGFileType,

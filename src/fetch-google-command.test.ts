@@ -1,47 +1,53 @@
-import { beforeEach, describe, expect, it, jest } from '@jest/globals';
-import { dispatch, fetch, string, unistd } from 'jxa-lib';
+import { beforeEach, describe, expect, it, type Mock, type MockedFunction, vi } from 'vitest';
+import { fetch, string, unistd } from 'jxa-lib';
 
-const fetchMock = fetch as jest.MockedFunction<typeof fetch>;
+const fetchMock = fetch as MockedFunction<typeof fetch>;
 
-jest.mock('jxa-lib', () => ({
+const semaState: { signal: Mock; waitForever: Mock } = {
+  signal: vi.fn(),
+  waitForever: vi.fn(),
+};
+
+vi.mock('jxa-lib', () => ({
   dispatch: {
-    DispatchSemaphore: jest.fn().mockImplementation(() => ({
-      signal: jest.fn(),
-      waitForever: jest.fn(),
-    })),
+    DispatchSemaphore: vi.fn(function (this: { signal: Mock; waitForever: Mock }) {
+      this.signal = semaState.signal;
+      this.waitForever = semaState.waitForever;
+    }),
   },
-  fetch: jest.fn(),
+  fetch: vi.fn(),
   stdlib: {
-    getenv: jest.fn(),
-    exit: jest.fn(),
+    getenv: vi.fn(),
+    exit: vi.fn(),
   },
   string: {
-    stringWithData: jest.fn(),
+    stringWithData: vi.fn(),
   },
   unistd: {
-    sleep: jest.fn(),
+    sleep: vi.fn(),
   },
 }));
 
 describe('fetchGoogle', () => {
-  let sema: { signal: jest.Mock; waitForever: jest.Mock };
+  let sema: { signal: Mock; waitForever: Mock };
 
   beforeEach(() => {
     sema = {
-      signal: jest.fn(),
-      waitForever: jest.fn(),
+      signal: vi.fn(),
+      waitForever: vi.fn(),
     };
-    (dispatch.DispatchSemaphore as jest.Mock).mockReturnValue(sema);
-    jest.clearAllMocks();
+    semaState.signal = sema.signal;
+    semaState.waitForever = sema.waitForever;
+    vi.clearAllMocks();
   });
 
   it('prints data when fetch resolves with data', async () => {
     const mockData = Buffer.from('hello');
     fetchMock.mockResolvedValue({ data: mockData as unknown as NSData });
-    (string.stringWithData as jest.Mock).mockReturnValue('hello');
+    (string.stringWithData as Mock).mockReturnValue('hello');
     sema.waitForever.mockReturnValueOnce(0);
 
-    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const { default: fetchGoogle } = await import('./fetch-google-command');
 
     const result = fetchGoogle();
@@ -61,7 +67,7 @@ describe('fetchGoogle', () => {
     fetchMock.mockResolvedValue({ data: null as unknown as NSData });
     sema.waitForever.mockReturnValueOnce(1).mockReturnValueOnce(0);
 
-    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const { default: fetchGoogle } = await import('./fetch-google-command');
 
     fetchGoogle();
@@ -75,7 +81,7 @@ describe('fetchGoogle', () => {
     fetchMock.mockRejectedValue(new Error('fail'));
     sema.waitForever.mockReturnValueOnce(0);
 
-    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
     const { default: fetchGoogle } = await import('./fetch-google-command');
 
     const result = fetchGoogle();

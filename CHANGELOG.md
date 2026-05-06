@@ -9,6 +9,16 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Switched the test runner from Jest to Vitest. Removed `jest`, `ts-jest`, and `@types/jest`;
+  added `vitest` and `@vitest/coverage-v8`. Test files now import from `vitest` (`vi`, `Mock`,
+  `MockedFunction`) instead of `@jest/globals`. Class mocks use the `function`-based form so they
+  work as constructors under Vitest.
+- Upgraded TypeScript to the latest 6.x. Removed the temporary 5.x pin from `.wiswa.jsonnet` and
+  the `moduleResolution: 'node'` override in `tsconfig`.
+- Generated `Tests` workflow now runs `yarn vitest run --coverage`.
+
 ## [0.0.1] - 2025-00-00
 
 First version.

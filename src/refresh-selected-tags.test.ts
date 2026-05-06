@@ -1,31 +1,31 @@
-import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import { applicationWithStandardAdditions } from 'jxa-lib';
 import refreshSelectedTags from './refresh-selected-tags';
 
-jest.mock('jxa-lib', () => ({
-  applicationWithStandardAdditions: jest.fn(),
+vi.mock('jxa-lib', () => ({
+  applicationWithStandardAdditions: vi.fn(),
   stdlib: {},
 }));
 
-const mockDisplayDialog = jest.fn();
-const mockRefresh = jest.fn();
+const mockDisplayDialog = vi.fn();
+const mockRefresh = vi.fn();
 
 function makeAppMock(selection: unknown[] = []) {
   return {
-    selection: jest.fn(() => selection),
+    selection: vi.fn(() => selection),
     displayDialog: mockDisplayDialog,
     refresh: mockRefresh,
   };
 }
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 describe('refreshSelectedTags', () => {
   it('shows dialog and returns 1 if no tracks are selected', () => {
     const appMock = makeAppMock([]);
-    (applicationWithStandardAdditions as jest.Mock).mockReturnValue(appMock);
+    (applicationWithStandardAdditions as Mock).mockReturnValue(appMock);
 
     const result = refreshSelectedTags();
 
@@ -46,7 +46,7 @@ describe('refreshSelectedTags', () => {
     const fileTrack = { class: () => 'fileTrack' };
     const nonFileTrack = { class: () => 'otherTrack' };
     const appMock = makeAppMock([fileTrack, nonFileTrack]);
-    (applicationWithStandardAdditions as jest.Mock).mockReturnValue(appMock);
+    (applicationWithStandardAdditions as Mock).mockReturnValue(appMock);
 
     const result = refreshSelectedTags();
 
@@ -63,7 +63,7 @@ describe('refreshSelectedTags', () => {
   it('does not call refresh if no file tracks are selected', () => {
     const nonFileTrack = { class: () => 'otherTrack' };
     const appMock = makeAppMock([nonFileTrack]);
-    (applicationWithStandardAdditions as jest.Mock).mockReturnValue(appMock);
+    (applicationWithStandardAdditions as Mock).mockReturnValue(appMock);
 
     const result = refreshSelectedTags();
 
@@ -79,7 +79,7 @@ describe('refreshSelectedTags', () => {
     const fileTrack1 = { class: () => 'fileTrack' };
     const fileTrack2 = { class: () => 'fileTrack' };
     const appMock = makeAppMock([fileTrack1, fileTrack2]);
-    (applicationWithStandardAdditions as jest.Mock).mockReturnValue(appMock);
+    (applicationWithStandardAdditions as Mock).mockReturnValue(appMock);
 
     const result = refreshSelectedTags();
 

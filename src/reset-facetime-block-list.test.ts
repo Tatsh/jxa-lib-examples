@@ -1,15 +1,15 @@
-import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, type Mock, vi } from 'vitest';
 import mockPath from 'ramda/es/path';
 import resetFaceTimeBlockList from './reset-facetime-block-list';
 
-jest.mock('ramda/es/path', () => jest.fn());
+vi.mock('ramda/es/path', () => ({ default: vi.fn() }));
 
-const mockActivate = jest.fn();
-const mockDelay = (global.delay = jest.fn());
-const mockKeyCode = jest.fn();
-jest.spyOn(console, 'log').mockImplementation(() => {});
+const mockActivate = vi.fn();
+const mockDelay = (global.delay = vi.fn());
+const mockKeyCode = vi.fn();
+vi.spyOn(console, 'log').mockImplementation(() => {});
 
-const mockApplication = jest.fn().mockImplementation((name: string) => {
+const mockApplication = vi.fn().mockImplementation((name: string) => {
   if (name === 'System Events') {
     return { keyCode: mockKeyCode };
   }
@@ -23,11 +23,11 @@ const mockApplication = jest.fn().mockImplementation((name: string) => {
 
 describe('resetFaceTimeBlockList', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should activate FaceTime, delay, and send keyCode for each row', () => {
-    (mockPath as jest.Mock).mockReturnValue(3);
+    (mockPath as Mock).mockReturnValue(3);
 
     const result = resetFaceTimeBlockList();
 
@@ -40,7 +40,7 @@ describe('resetFaceTimeBlockList', () => {
   });
 
   it('should handle zero rows gracefully', () => {
-    (mockPath as jest.Mock).mockReturnValue(0);
+    (mockPath as Mock).mockReturnValue(0);
 
     const result = resetFaceTimeBlockList();
 

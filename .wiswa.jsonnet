@@ -9,7 +9,7 @@ local utils = import 'utils.libjsonnet';
   github_project_name: 'jxa-lib-examples',
   repository_name: self.github_project_name,
   project_name: '@tatsh/jxa-lib-examples',
-  version: '0.0.5',
+  version: '0.0.6',
   description: 'jxa-lib examples.',
   keywords: ['applescript', 'jxa', 'macos', 'typescript'],
   want_main: false,
@@ -31,6 +31,17 @@ local utils = import 'utils.libjsonnet';
     main: 'dist/index.js',
     publishConfig: {
       registry: 'https://npm.pkg.github.com',
+    },
+  },
+  cz+: {
+    commitizen+: {
+      version_files: [
+        '.wiswa.jsonnet',
+        'CITATION.cff',
+        'README.md',
+        'man/jxa-lib-examples.1',
+        'package.json',
+      ],
     },
   },
   eslint+: [{ rules: { '@typescript-eslint/no-unused-expressions': 'off' } }],

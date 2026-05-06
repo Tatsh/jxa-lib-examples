@@ -1,6 +1,7 @@
 Ångström
 applescript
 bsky
+commitizen
 cooldown
 coveragerc
 coverallsapp

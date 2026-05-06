@@ -7,7 +7,7 @@
       ".wiswa.jsonnet",
       "CITATION.cff",
       "README.md",
-      "man/@tatsh/jxa-lib-examples.1",
+      "man/jxa-lib-examples.1",
       "package.json"
     ],
     "version_provider": "npm",

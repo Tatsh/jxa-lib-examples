@@ -138,5 +138,5 @@
     "qa": "eslint && yarn check-spelling && yarn check-formatting",
     "test": "vitest run"
   },
-  "version": "0.0.5"
+  "version": "0.0.6"
 }

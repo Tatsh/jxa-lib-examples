@@ -27,4 +27,62 @@
 
 <!-- WISWA-GENERATED-README:STOP -->
 
-jxa-lib examples.
+A small collection of [JavaScript for Automation][jxa] (JXA) example scripts that demonstrate the
+[`jxa-lib`][jxa-lib] helper library on macOS. The bundled binary presents a Finder chooser, then
+runs the selected example through `osascript`.
+
+## Examples
+
+Each entry below corresponds to a module under `src/`:
+
+- **Clear Badge of FaceTime.app** — remove the unread-call badge from the Dock icon.
+- **Fetch google.com with NSURLSession** — issue an HTTP request through `NSURLSession` using the
+  `fetch`-like API in `jxa-lib`, synchronised with a `DispatchSemaphore`.
+- **Get icon of Chrome Apps.localized** — read the icon of Chrome's localised "Apps" directory.
+- **Refresh selected tags in Music.app** — refresh metadata for the currently selected tracks.
+- **Refresh all tags in Music.app** — clear orphaned tracks, then refresh metadata for every file
+  track.
+- **Reset the FaceTime block list** — clear the FaceTime block list (the Preferences window must
+  already be open).
+
+## Requirements
+
+macOS 10.10 Yosemite or newer. The examples drive AppleScript-scriptable applications and call into
+Cocoa through the Objective-C bridge.
+
+## Installation
+
+Download the prebuilt bundle from `master`:
+
+```sh
+curl -fLO https://raw.githubusercontent.com/Tatsh/jxa-lib-examples/refs/heads/master/dist/index.js
+```
+
+The file already carries a JXA shebang (`#!/usr/bin/env osascript -l JavaScript`), so making it
+executable is enough to run it on its own:
+
+```sh
+chmod +x index.js
+```
+
+## Usage
+
+Either invoke it directly, having marked it executable:
+
+```sh
+./index.js
+```
+
+Or hand it to `osascript` explicitly, with no `chmod` required:
+
+```sh
+osascript -l JavaScript index.js
+```
+
+A Finder chooser appears with the list of examples. Open the relevant application first (for
+instance, FaceTime for the block-list example) and then click **OK**.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for build and development instructions.
+
+[jxa]: https://github.com/JXA-Cookbook/JXA-Cookbook
+[jxa-lib]: https://github.com/Tatsh/jxa-lib

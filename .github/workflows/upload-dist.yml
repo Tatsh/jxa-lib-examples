@@ -1,0 +1,19 @@
+jobs:
+  upload-dist:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v6.0.2'
+      - name: 'Rename binary for release'
+        run: 'cp dist/index.js jxa-lib-examples'
+      - name: 'Upload jxa-lib-examples to draft release'
+        uses: 'softprops/action-gh-release@v3.0.0'
+        with:
+          draft: true
+          files: 'jxa-lib-examples'
+name: 'Upload dist'
+'on':
+  push:
+    tags:
+      - 'v*'
+permissions:
+  contents: 'write'

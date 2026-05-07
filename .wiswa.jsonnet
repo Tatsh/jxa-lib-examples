@@ -11,6 +11,7 @@ local utils = import 'utils.libjsonnet';
       publish_npm_any+: {
         build_command: 'yarn webpack',
       },
+      release_gate_workflows: ['Upload dist'],
     },
   },
   // Shared

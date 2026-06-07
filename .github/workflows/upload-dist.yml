@@ -2,7 +2,7 @@ jobs:
   upload-dist:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v6.0.2'
+      - uses: 'actions/checkout@v6.0.3'
       - name: 'Rename binary for release'
         run: 'cp dist/index.js jxa-lib-examples'
       - name: 'Upload jxa-lib-examples to draft release'

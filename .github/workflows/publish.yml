@@ -2,7 +2,7 @@ jobs:
   check:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v6.0.2'
+      - uses: 'actions/checkout@v6.0.3'
       - env:
           COMMIT_SHA: '${{ github.sha }}'
           GH_TOKEN: '${{ github.token }}'
@@ -76,7 +76,7 @@ jobs:
       packages: 'write'
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v6.0.2'
+      - uses: 'actions/checkout@v6.0.3'
       - name: 'Setup Node.js'
         uses: 'actions/setup-node@v6.4.0'
         with:

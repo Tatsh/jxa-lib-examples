@@ -6,7 +6,7 @@ jobs:
       - name: 'Rename binary for release'
         run: 'cp dist/index.js jxa-lib-examples'
       - name: 'Upload jxa-lib-examples to draft release'
-        uses: 'softprops/action-gh-release@v3.0.1'
+        uses: 'softprops/action-gh-release@v3.0.2'
         with:
           draft: true
           files: 'jxa-lib-examples'

@@ -1,8 +1,8 @@
 {
   "_wiswa": {
-    "commandLine": "wiswa",
-    "lastRun": "2026-05-06T21:30:37Z",
-    "version": "e1a131b-dirty"
+    "commandLine": "wiswa -q --skip-remote --cache-time 86400",
+    "lastRun": "2026-10-03T00:50:36Z",
+    "version": "eb45807"
   },
   "bin": "./dist/index.js",
   "contributors": ["Andrew Udvare <audvare@gmail.com>"],
@@ -28,6 +28,7 @@
       ".git/**",
       ".yarn/**/*.cjs",
       ".vscode/extensions.json",
+      ".wiswa-ci/**",
       "dist/**",
       "man/**"
     ],
@@ -44,12 +45,13 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@prettier/plugin-xml": "^3.4.2",
-    "@types/node": "^26.6.2",
+    "@types/node": "^26.6.3",
     "@types/ramda": "^0.32.0",
     "@vitest/coverage-v8": "^5.0.2",
     "cspell": "^10.3.4",
     "eslint": "^10.11.0",
     "globals": "^17.12.0",
+    "jiti": "^2.7.0",
     "jxa-lib": "^0.1.10",
     "jxa-types": "^0.0.12",
     "markdownlint-cli2": "^0.23.3",
@@ -61,7 +63,7 @@
     "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
     "typedoc": "^0.28.20",
-    "typescript": "^6.0.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.70.1",
     "vite": "^8.3.1",
     "vitest": "^5.0.2",
@@ -101,7 +103,7 @@
     "showFound": true
   },
   "name": "@tatsh/jxa-lib-examples",
-  "packageManager": "yarn@4.14.1",
+  "packageManager": "yarn@4.18.1",
   "prettier": {
     "endOfLine": "lf",
     "iniSpaceAroundEquals": true,
@@ -111,6 +113,12 @@
         "files": ["*.json.dist", "package.json"],
         "options": {
           "parser": "json"
+        }
+      },
+      {
+        "files": ["*.toml"],
+        "options": {
+          "singleQuote": false
         }
       }
     ],
@@ -134,7 +142,7 @@
   "scripts": {
     "check-formatting": "prettier --check . && markdownlint-cli2 --config package.json --configPointer /markdownlint-cli2",
     "check-spelling": "cspell --no-progress",
-    "dict:update": "rm -f .vscode/dictionary.txt && cspell lint --no-progress --no-summary --unique --words-only | tr '[:upper:]' '[:lower:]' | sort -u > .vscode/dictionary.txt",
+    "dict:update": "rm -f .vscode/dictionary.txt && cspell lint --no-progress --no-summary --unique --words-only | LC_ALL=C tr '[:upper:]' '[:lower:]' | LC_ALL=C sort -u > .vscode/dictionary.txt",
     "format": "prettier --write . && markdownlint-cli2 --config package.json --configPointer /markdownlint-cli2 --fix",
     "qa": "eslint && yarn check-spelling && yarn check-formatting",
     "test": "vitest run"

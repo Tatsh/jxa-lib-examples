@@ -1,5 +1,12 @@
+concurrency:
+  cancel-in-progress: false
+  group: '${{ github.workflow }}-${{ github.ref }}'
+  queue: 'max'
 jobs:
   upload-dist:
+    name: 'Upload dist'
+    permissions:
+      contents: 'write'
     runs-on: 'ubuntu-latest'
     steps:
       - uses: 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
@@ -20,5 +27,4 @@ name: 'Upload dist'
   push:
     tags:
       - 'v*'
-permissions:
-  contents: 'write'
+permissions: {}

@@ -39,7 +39,6 @@ shellcheck
 shellformat
 shopt
 snapcraft
-softprops
 statusline
 tatsh
 tostring
